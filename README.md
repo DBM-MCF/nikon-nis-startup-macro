@@ -15,13 +15,14 @@ Is only executed on selected and configured alias/shortcut (see usage for detail
 ## Purpose
 When starting the NIS acquisition software a macro that checks sets following settings:
 1. Checks if the manual optical zoom has been switched to 1.5x and pops a warning message if so.
-2. Lowers the objecte turret to a low stating height
+2. Lowers the objective turret to a low stating height
 3. Switches to the lowest magnification objective (objective position 0)
+4. Sets defaults for the piezo (move to home and keep it)
+5. Configures the execution of a shut-down macro when NIS closes. The provided example `NIS_shutDownMacro.mac` will lower the objective and switch to the objective position 0.
 
 ## Usage
 The start up macro can be configured to be executed across different NIS users and Windows users.
 1. Place the macro into the default NIS macro folder, usually: `C:\Program Files\NIS-Elements\Macros`
 2. Specify a NIS alias/shortcut to execute the macro. Do this on one in the `Public Desktop` folder for multiple Windows user accounts.
-  * In the alias shortcut: `"path_to_nis_ar.exe" -mw "relative_path_to_macro.mac"`
+  * In the alias, select 'Properties', then in 'Shortcut' > 'Target': `"path_to_nis_ar.exe" -mw "relative_path_to_macro.mac"`
   * Default path example: `"C:\Program Files\NIS-Elements\nis_ar.exe" -mw "Macros\NIS_StartUpMacro.mac"`
-
